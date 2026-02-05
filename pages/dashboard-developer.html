@@ -1,0 +1,908 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Developer Dashboard - Urban Sprawl Management System">
+    <title>Developer Dashboard | Urban Sprawl Management</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+    <div class="dashboard">
+        <!-- Sidebar Navigation -->
+        <aside class="sidebar">
+            <div class="sidebar-brand">
+                <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none"
+                    stroke="var(--accent-violet)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
+                    <polyline points="9 22 9 12 15 12 15 22" />
+                </svg>
+                Urban Sprawl
+            </div>
+
+            <nav class="sidebar-nav">
+                <div class="sidebar-section">
+                    <div class="sidebar-section-title">Developer Tools</div>
+                    <a href="#" class="sidebar-link active" data-tab="overview">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="3" y="3" width="7" height="7" />
+                            <rect x="14" y="3" width="7" height="7" />
+                            <rect x="14" y="14" width="7" height="7" />
+                            <rect x="3" y="14" width="7" height="7" />
+                        </svg>
+                        System Overview
+                    </a>
+                    <a href="#" class="sidebar-link" data-tab="users">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
+                            <circle cx="9" cy="7" r="4" />
+                            <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
+                            <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+                        </svg>
+                        User Statistics
+                    </a>
+                    <a href="#" class="sidebar-link" data-tab="feedback-analytics">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
+                        </svg>
+                        Feedback Analytics
+                    </a>
+                    <a href="#" class="sidebar-link" data-tab="data-quality">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10" />
+                            <path d="m9 12 2 2 4-4" />
+                        </svg>
+                        Data Quality
+                    </a>
+                </div>
+
+                <div class="sidebar-section">
+                    <div class="sidebar-section-title">Builder Features</div>
+                    <a href="#" class="sidebar-link" data-tab="infographics">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <line x1="18" y1="20" x2="18" y2="10" />
+                            <line x1="12" y1="20" x2="12" y2="4" />
+                            <line x1="6" y1="20" x2="6" y2="14" />
+                        </svg>
+                        Dynamic Infographics
+                    </a>
+                    <a href="#" class="sidebar-link" data-tab="forecasting">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="22 12 18 12 15 21 9 3 6 12 2 12" />
+                        </svg>
+                        Forecasting
+                    </a>
+                    <a href="#" class="sidebar-link" data-tab="alerts">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9" />
+                            <path d="M13.73 21a2 2 0 0 1-3.46 0" />
+                        </svg>
+                        Alert Center
+                        <span class="badge error" style="margin-left: auto;">3</span>
+                    </a>
+                </div>
+
+                <div class="sidebar-section">
+                    <div class="sidebar-section-title">System</div>
+                    <a href="#" class="sidebar-link" data-tab="system-health">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="22 12 18 12 15 21 9 3 6 12 2 12" />
+                        </svg>
+                        System Health
+                    </a>
+                </div>
+            </nav>
+
+            <div class="sidebar-footer">
+                <div class="sidebar-user">
+                    <div class="sidebar-avatar"
+                        style="background: linear-gradient(135deg, var(--accent-violet), #a78bfa);">DV</div>
+                    <div class="sidebar-user-info">
+                        <div class="sidebar-user-name">Developer</div>
+                        <div class="sidebar-user-role">System Admin</div>
+                    </div>
+                </div>
+                <a href="../index.html" class="btn btn-sm btn-secondary"
+                    style="width: 100%; margin-top: var(--spacing-md);">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4" />
+                        <polyline points="16 17 21 12 16 7" />
+                        <line x1="21" y1="12" x2="9" y2="12" />
+                    </svg>
+                    Logout
+                </a>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- System Overview Tab -->
+            <div id="overview" class="tab-content active">
+                <div class="page-header">
+                    <div>
+                        <h1 class="page-title">System Overview</h1>
+                        <p class="page-subtitle">Developer dashboard with full platform insights</p>
+                    </div>
+                    <div class="flex gap-md">
+                        <span class="badge success">All Systems Operational</span>
+                    </div>
+                </div>
+
+                <!-- System Stats -->
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-header">
+                            <div class="stat-icon"
+                                style="background: linear-gradient(135deg, rgba(139, 92, 246, 0.1), rgba(139, 92, 246, 0.2)); color: var(--accent-violet);">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round">
+                                    <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
+                                    <circle cx="9" cy="7" r="4" />
+                                    <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
+                                    <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+                                </svg>
+                            </div>
+                            <span class="stat-trend up">↑ 15.2%</span>
+                        </div>
+                        <div class="stat-value">1,247</div>
+                        <div class="stat-label">Total Users</div>
+                    </div>
+
+                    <div class="stat-card">
+                        <div class="stat-header">
+                            <div class="stat-icon"
+                                style="background: linear-gradient(135deg, rgba(16, 185, 129, 0.1), rgba(16, 185, 129, 0.2)); color: var(--primary-emerald);">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round">
+                                    <path d="M2 20h20" />
+                                    <path d="M5 20V8.7a1 1 0 0 1 .4-.8l4-2.7a1 1 0 0 1 1.2 0l4 2.7a1 1 0 0 1 .4.8V20" />
+                                </svg>
+                            </div>
+                            <span class="stat-trend up">↑ 8.3%</span>
+                        </div>
+                        <div class="stat-value">89</div>
+                        <div class="stat-label">Active Builders</div>
+                    </div>
+
+                    <div class="stat-card">
+                        <div class="stat-header">
+                            <div class="stat-icon"
+                                style="background: linear-gradient(135deg, rgba(14, 165, 233, 0.1), rgba(14, 165, 233, 0.2)); color: var(--secondary-sky);">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round">
+                                    <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
+                                </svg>
+                            </div>
+                            <span class="stat-trend up">↑ 23.4%</span>
+                        </div>
+                        <div class="stat-value">342</div>
+                        <div class="stat-label">Feedback Received</div>
+                    </div>
+
+                    <div class="stat-card">
+                        <div class="stat-header">
+                            <div class="stat-icon"
+                                style="background: linear-gradient(135deg, rgba(34, 197, 94, 0.1), rgba(34, 197, 94, 0.2)); color: var(--success);">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round">
+                                    <polyline points="22 12 18 12 15 21 9 3 6 12 2 12" />
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="stat-value">99.8%</div>
+                        <div class="stat-label">System Uptime</div>
+                    </div>
+                </div>
+
+                <!-- Charts -->
+                <div class="grid grid-2" style="margin-bottom: var(--spacing-xl);">
+                    <div class="chart-card">
+                        <div class="chart-header">
+                            <h3 class="chart-title">User Activity (Last 7 Days)</h3>
+                        </div>
+                        <div class="chart-container">
+                            <canvas id="userActivityChart"></canvas>
+                        </div>
+                    </div>
+
+                    <div class="chart-card">
+                        <div class="chart-header">
+                            <h3 class="chart-title">User Distribution by Role</h3>
+                        </div>
+                        <div class="chart-container">
+                            <canvas id="userDistributionChart"></canvas>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Quick Links -->
+                <div class="grid grid-4">
+                    <div class="card text-center" style="cursor: pointer;"
+                        onclick="document.querySelector('[data-tab=users]').click()">
+                        <div class="card-icon violet" style="margin: 0 auto var(--spacing-md);">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
+                                <circle cx="9" cy="7" r="4" />
+                            </svg>
+                        </div>
+                        <h5>User Stats</h5>
+                    </div>
+                    <div class="card text-center" style="cursor: pointer;"
+                        onclick="document.querySelector('[data-tab=feedback-analytics]').click()">
+                        <div class="card-icon sky" style="margin: 0 auto var(--spacing-md);">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
+                            </svg>
+                        </div>
+                        <h5>Feedback</h5>
+                    </div>
+                    <div class="card text-center" style="cursor: pointer;"
+                        onclick="document.querySelector('[data-tab=data-quality]').click()">
+                        <div class="card-icon emerald" style="margin: 0 auto var(--spacing-md);">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10" />
+                            </svg>
+                        </div>
+                        <h5>Data Quality</h5>
+                    </div>
+                    <div class="card text-center" style="cursor: pointer;"
+                        onclick="document.querySelector('[data-tab=system-health]').click()">
+                        <div class="card-icon orange" style="margin: 0 auto var(--spacing-md);">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <polyline points="22 12 18 12 15 21 9 3 6 12 2 12" />
+                            </svg>
+                        </div>
+                        <h5>System Health</h5>
+                    </div>
+                </div>
+            </div>
+
+            <!-- User Statistics Tab -->
+            <div id="users" class="tab-content">
+                <div class="page-header">
+                    <div>
+                        <h1 class="page-title">User Statistics</h1>
+                        <p class="page-subtitle">Active users, session data, and engagement metrics</p>
+                    </div>
+                </div>
+
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-value">1,158</div>
+                        <div class="stat-label">Citizen Users</div>
+                        <div class="progress-bar mt-md">
+                            <div class="progress-fill sky" style="width: 93%;"></div>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-value">89</div>
+                        <div class="stat-label">Builder Users</div>
+                        <div class="progress-bar mt-md">
+                            <div class="progress-fill emerald" style="width: 7%;"></div>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-value">12m 34s</div>
+                        <div class="stat-label">Avg. Session Duration</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-value">4.2</div>
+                        <div class="stat-label">Pages per Session</div>
+                    </div>
+                </div>
+
+                <div class="chart-card" style="margin-top: var(--spacing-xl);">
+                    <div class="chart-header">
+                        <h3 class="chart-title">User Registrations Over Time</h3>
+                    </div>
+                    <div class="chart-container">
+                        <canvas id="userRegistrationChart"></canvas>
+                    </div>
+                </div>
+
+                <div class="card" style="margin-top: var(--spacing-xl);">
+                    <h4 style="margin-bottom: var(--spacing-lg);">Recent User Activity</h4>
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th>User</th>
+                                <th>Role</th>
+                                <th>Last Active</th>
+                                <th>Sessions</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>planner@city.gov</td>
+                                <td>Builder</td>
+                                <td>2 mins ago</td>
+                                <td>47</td>
+                                <td><span class="badge success">Active</span></td>
+                            </tr>
+                            <tr>
+                                <td>director@urban.org</td>
+                                <td>Builder</td>
+                                <td>15 mins ago</td>
+                                <td>32</td>
+                                <td><span class="badge success">Active</span></td>
+                            </tr>
+                            <tr>
+                                <td>citizen.1024@mail.com</td>
+                                <td>User</td>
+                                <td>1 hour ago</td>
+                                <td>5</td>
+                                <td><span class="badge info">Away</span></td>
+                            </tr>
+                            <tr>
+                                <td>researcher@uni.edu</td>
+                                <td>Builder</td>
+                                <td>3 hours ago</td>
+                                <td>89</td>
+                                <td><span class="badge info">Away</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Feedback Analytics Tab -->
+            <div id="feedback-analytics" class="tab-content">
+                <div class="page-header">
+                    <div>
+                        <h1 class="page-title">Feedback Analytics</h1>
+                        <p class="page-subtitle">Aggregated feedback visualization and sentiment analysis</p>
+                    </div>
+                </div>
+
+                <div class="grid grid-2" style="margin-bottom: var(--spacing-xl);">
+                    <div class="chart-card">
+                        <div class="chart-header">
+                            <h3 class="chart-title">Feedback Sentiment Distribution</h3>
+                        </div>
+                        <div class="chart-container">
+                            <canvas id="feedbackSentimentChart"></canvas>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <h4 style="margin-bottom: var(--spacing-lg);">Feedback by Category</h4>
+                        <div style="margin-bottom: var(--spacing-lg);">
+                            <div class="flex justify-between mb-sm">
+                                <span>Feature Requests</span>
+                                <strong>45%</strong>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress-fill sky" style="width: 45%;"></div>
+                            </div>
+                        </div>
+                        <div style="margin-bottom: var(--spacing-lg);">
+                            <div class="flex justify-between mb-sm">
+                                <span>Usability</span>
+                                <strong>28%</strong>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress-fill emerald" style="width: 28%;"></div>
+                            </div>
+                        </div>
+                        <div style="margin-bottom: var(--spacing-lg);">
+                            <div class="flex justify-between mb-sm">
+                                <span>Data Quality</span>
+                                <strong>15%</strong>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress-fill orange" style="width: 15%;"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-sm">
+                                <span>Bug Reports</span>
+                                <strong>12%</strong>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress-fill violet" style="width: 12%;"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <h4 style="margin-bottom: var(--spacing-lg);">Recent Feedback</h4>
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th>Date</th>
+                                <th>User Type</th>
+                                <th>Category</th>
+                                <th>Sentiment</th>
+                                <th>Summary</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Feb 5, 2026</td>
+                                <td>Builder</td>
+                                <td>Feature</td>
+                                <td><span class="badge success">Positive</span></td>
+                                <td>Request for real-time traffic integration</td>
+                            </tr>
+                            <tr>
+                                <td>Feb 4, 2026</td>
+                                <td>User</td>
+                                <td>Usability</td>
+                                <td><span class="badge success">Positive</span></td>
+                                <td>Dashboard is intuitive and helpful</td>
+                            </tr>
+                            <tr>
+                                <td>Feb 3, 2026</td>
+                                <td>Builder</td>
+                                <td>Data Quality</td>
+                                <td><span class="badge warning">Neutral</span></td>
+                                <td>Zone 3 historical data needs update</td>
+                            </tr>
+                            <tr>
+                                <td>Feb 2, 2026</td>
+                                <td>User</td>
+                                <td>Bug</td>
+                                <td><span class="badge error">Negative</span></td>
+                                <td>Chart not loading on mobile Safari</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Data Quality Tab -->
+            <div id="data-quality" class="tab-content">
+                <div class="page-header">
+                    <div>
+                        <h1 class="page-title">Data Quality Dashboard</h1>
+                        <p class="page-subtitle">Reliability scores for integrated data sources</p>
+                    </div>
+                </div>
+
+                <div class="grid grid-3" style="margin-bottom: var(--spacing-xl);">
+                    <div class="stat-card">
+                        <h5 style="color: var(--text-secondary); margin-bottom: var(--spacing-sm);">Overall Data Quality
+                        </h5>
+                        <div class="stat-value" style="color: var(--success);">87%</div>
+                        <div class="confidence-indicator mt-md">
+                            <div class="confidence-bar" style="flex: 1;">
+                                <div class="confidence-fill" style="width: 87%;"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <h5 style="color: var(--text-secondary); margin-bottom: var(--spacing-sm);">Data Freshness</h5>
+                        <div class="stat-value" style="color: var(--secondary-sky);">92%</div>
+                        <p style="font-size: var(--font-size-xs); color: var(--text-muted);">Last update: 2 hours ago
+                        </p>
+                    </div>
+                    <div class="stat-card">
+                        <h5 style="color: var(--text-secondary); margin-bottom: var(--spacing-sm);">Completeness</h5>
+                        <div class="stat-value" style="color: var(--primary-emerald);">94%</div>
+                        <p style="font-size: var(--font-size-xs); color: var(--text-muted);">3 fields with missing data
+                        </p>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <h4 style="margin-bottom: var(--spacing-lg);">Data Source Quality Scores</h4>
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th>Data Source</th>
+                                <th>Quality Score</th>
+                                <th>Completeness</th>
+                                <th>Last Updated</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Census Data</td>
+                                <td>
+                                    <div class="confidence-indicator">
+                                        <div class="confidence-bar" style="width: 100px;">
+                                            <div class="confidence-fill" style="width: 95%;"></div>
+                                        </div>
+                                        <span>95%</span>
+                                    </div>
+                                </td>
+                                <td>98%</td>
+                                <td>Jan 2026</td>
+                                <td><span class="badge success">Good</span></td>
+                            </tr>
+                            <tr>
+                                <td>Land Use Registry</td>
+                                <td>
+                                    <div class="confidence-indicator">
+                                        <div class="confidence-bar" style="width: 100px;">
+                                            <div class="confidence-fill" style="width: 88%;"></div>
+                                        </div>
+                                        <span>88%</span>
+                                    </div>
+                                </td>
+                                <td>92%</td>
+                                <td>Dec 2025</td>
+                                <td><span class="badge success">Good</span></td>
+                            </tr>
+                            <tr>
+                                <td>Traffic Sensors</td>
+                                <td>
+                                    <div class="confidence-indicator">
+                                        <div class="confidence-bar" style="width: 100px;">
+                                            <div class="confidence-fill" style="width: 78%;"></div>
+                                        </div>
+                                        <span>78%</span>
+                                    </div>
+                                </td>
+                                <td>85%</td>
+                                <td>Real-time</td>
+                                <td><span class="badge warning">Fair</span></td>
+                            </tr>
+                            <tr>
+                                <td>Environmental Sensors</td>
+                                <td>
+                                    <div class="confidence-indicator">
+                                        <div class="confidence-bar" style="width: 100px;">
+                                            <div class="confidence-fill" style="width: 82%;"></div>
+                                        </div>
+                                        <span>82%</span>
+                                    </div>
+                                </td>
+                                <td>90%</td>
+                                <td>Real-time</td>
+                                <td><span class="badge success">Good</span></td>
+                            </tr>
+                            <tr>
+                                <td>Infrastructure Database</td>
+                                <td>
+                                    <div class="confidence-indicator">
+                                        <div class="confidence-bar" style="width: 100px;">
+                                            <div class="confidence-fill" style="width: 65%;"></div>
+                                        </div>
+                                        <span>65%</span>
+                                    </div>
+                                </td>
+                                <td>72%</td>
+                                <td>Nov 2025</td>
+                                <td><span class="badge error">Needs Update</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Dynamic Infographics Tab (Same as Builder) -->
+            <div id="infographics" class="tab-content">
+                <div class="page-header">
+                    <div>
+                        <h1 class="page-title">Dynamic Infographics</h1>
+                        <p class="page-subtitle">ML model results and urban sprawl indicators</p>
+                    </div>
+                </div>
+
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-header">
+                            <div class="stat-icon"
+                                style="background: linear-gradient(135deg, rgba(16, 185, 129, 0.1), rgba(16, 185, 129, 0.2)); color: var(--primary-emerald);">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round">
+                                    <path
+                                        d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z" />
+                                </svg>
+                            </div>
+                            <span class="stat-trend up">↑ 12.5%</span>
+                        </div>
+                        <div class="stat-value">67.3</div>
+                        <div class="stat-label">Urban Sprawl Index</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-value">2.4M</div>
+                        <div class="stat-label">Population Density</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-value">72%</div>
+                        <div class="stat-label">Infrastructure Stress</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-value">54</div>
+                        <div class="stat-label">Environmental Score</div>
+                    </div>
+                </div>
+
+                <div class="grid grid-2" style="margin-top: var(--spacing-xl);">
+                    <div class="chart-card">
+                        <h3 class="chart-title">Land Use Classification</h3>
+                        <div class="chart-container">
+                            <canvas id="devLandUseChart"></canvas>
+                        </div>
+                    </div>
+                    <div class="chart-card">
+                        <h3 class="chart-title">Urban Sprawl Trend</h3>
+                        <div class="chart-container">
+                            <canvas id="devSprawlChart"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Forecasting Tab -->
+            <div id="forecasting" class="tab-content">
+                <div class="page-header">
+                    <div>
+                        <h1 class="page-title">Forecasting & Development</h1>
+                        <p class="page-subtitle">Trend projections and scenario planning</p>
+                    </div>
+                </div>
+                <div class="chart-card">
+                    <h3 class="chart-title">5/10/25 Year Projections</h3>
+                    <div class="chart-container">
+                        <canvas id="devProjectionChart"></canvas>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Alert Center Tab -->
+            <div id="alerts" class="tab-content">
+                <div class="page-header">
+                    <div>
+                        <h1 class="page-title">Alert Center</h1>
+                        <p class="page-subtitle">Critical notifications and system alerts</p>
+                    </div>
+                </div>
+
+                <div class="alert-banner error" style="margin-bottom: var(--spacing-md);">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2">
+                        <circle cx="12" cy="12" r="10" />
+                        <line x1="12" y1="8" x2="12" y2="12" />
+                        <line x1="12" y1="16" x2="12.01" y2="16" />
+                    </svg>
+                    <div style="flex: 1;">
+                        <strong>Critical: Traffic Congestion Index Exceeded</strong>
+                        <p style="font-size: var(--font-size-sm);">Zone 4 - 3x normal levels</p>
+                    </div>
+                    <span style="font-size: var(--font-size-xs);">2 hours ago</span>
+                </div>
+
+                <div class="alert-banner warning" style="margin-bottom: var(--spacing-md);">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2">
+                        <path
+                            d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z" />
+                    </svg>
+                    <div style="flex: 1;">
+                        <strong>Warning: Data Source Outdated</strong>
+                        <p style="font-size: var(--font-size-sm);">Infrastructure database needs refresh</p>
+                    </div>
+                    <span style="font-size: var(--font-size-xs);">1 day ago</span>
+                </div>
+
+                <div class="alert-banner info">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2">
+                        <circle cx="12" cy="12" r="10" />
+                        <line x1="12" y1="16" x2="12" y2="12" />
+                        <line x1="12" y1="8" x2="12.01" y2="8" />
+                    </svg>
+                    <div style="flex: 1;">
+                        <strong>Info: System Update Scheduled</strong>
+                        <p style="font-size: var(--font-size-sm);">Maintenance window: Feb 10, 2AM-4AM</p>
+                    </div>
+                    <span style="font-size: var(--font-size-xs);">2 days ago</span>
+                </div>
+            </div>
+
+            <!-- System Health Tab -->
+            <div id="system-health" class="tab-content">
+                <div class="page-header">
+                    <div>
+                        <h1 class="page-title">System Health</h1>
+                        <p class="page-subtitle">Model performance and system metrics</p>
+                    </div>
+                </div>
+
+                <div class="grid grid-4" style="margin-bottom: var(--spacing-xl);">
+                    <div class="stat-card">
+                        <div class="stat-value" style="color: var(--success);">99.8%</div>
+                        <div class="stat-label">Uptime (30 days)</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-value">142ms</div>
+                        <div class="stat-label">Avg Response Time</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-value">87%</div>
+                        <div class="stat-label">ML Model Accuracy</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-value">v2.4</div>
+                        <div class="stat-label">Current Version</div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <h4 style="margin-bottom: var(--spacing-lg);">Service Status</h4>
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th>Service</th>
+                                <th>Status</th>
+                                <th>Response Time</th>
+                                <th>Last Check</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>API Gateway</td>
+                                <td><span class="badge success">Operational</span></td>
+                                <td>45ms</td>
+                                <td>Just now</td>
+                            </tr>
+                            <tr>
+                                <td>ML Prediction Engine</td>
+                                <td><span class="badge success">Operational</span></td>
+                                <td>234ms</td>
+                                <td>Just now</td>
+                            </tr>
+                            <tr>
+                                <td>Database Cluster</td>
+                                <td><span class="badge success">Operational</span></td>
+                                <td>12ms</td>
+                                <td>Just now</td>
+                            </tr>
+                            <tr>
+                                <td>Data Integration Layer</td>
+                                <td><span class="badge success">Operational</span></td>
+                                <td>89ms</td>
+                                <td>Just now</td>
+                            </tr>
+                            <tr>
+                                <td>Cache Server</td>
+                                <td><span class="badge success">Operational</span></td>
+                                <td>3ms</td>
+                                <td>Just now</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="../js/charts.js"></script>
+    <script src="../js/main.js"></script>
+    <script>
+        // Developer-specific charts
+        document.addEventListener('DOMContentLoaded', function () {
+            // User Activity Chart
+            const userActivityCtx = document.getElementById('userActivityChart');
+            if (userActivityCtx) {
+                new Chart(userActivityCtx, {
+                    type: 'bar',
+                    data: {
+                        labels: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
+                        datasets: [{
+                            label: 'Builders',
+                            data: [45, 52, 48, 61, 55, 22, 18],
+                            backgroundColor: '#10b981',
+                            borderRadius: 4
+                        }, {
+                            label: 'Users',
+                            data: [120, 135, 142, 158, 145, 88, 76],
+                            backgroundColor: '#0ea5e9',
+                            borderRadius: 4
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        scales: {
+                            y: { beginAtZero: true, grid: { color: 'rgba(0,0,0,0.05)' } },
+                            x: { grid: { display: false } }
+                        }
+                    }
+                });
+            }
+
+            // User Distribution Chart
+            const userDistCtx = document.getElementById('userDistributionChart');
+            if (userDistCtx) {
+                new Chart(userDistCtx, {
+                    type: 'doughnut',
+                    data: {
+                        labels: ['Citizens', 'Planners', 'Officials', 'Researchers'],
+                        datasets: [{
+                            data: [1158, 45, 32, 12],
+                            backgroundColor: ['#0ea5e9', '#10b981', '#f97316', '#8b5cf6'],
+                            borderWidth: 0
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        cutout: '60%'
+                    }
+                });
+            }
+
+            // Feedback Sentiment Chart
+            const sentimentCtx = document.getElementById('feedbackSentimentChart');
+            if (sentimentCtx) {
+                new Chart(sentimentCtx, {
+                    type: 'doughnut',
+                    data: {
+                        labels: ['Positive', 'Neutral', 'Negative'],
+                        datasets: [{
+                            data: [65, 25, 10],
+                            backgroundColor: ['#22c55e', '#eab308', '#ef4444'],
+                            borderWidth: 0
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        cutout: '70%'
+                    }
+                });
+            }
+
+            // User Registration Chart
+            const regCtx = document.getElementById('userRegistrationChart');
+            if (regCtx) {
+                new Chart(regCtx, {
+                    type: 'line',
+                    data: {
+                        labels: ['Aug', 'Sep', 'Oct', 'Nov', 'Dec', 'Jan', 'Feb'],
+                        datasets: [{
+                            label: 'New Users',
+                            data: [45, 62, 78, 95, 124, 156, 187],
+                            borderColor: '#8b5cf6',
+                            backgroundColor: 'rgba(139, 92, 246, 0.1)',
+                            fill: true,
+                            tension: 0.4
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        scales: {
+                            y: { beginAtZero: true, grid: { color: 'rgba(0,0,0,0.05)' } },
+                            x: { grid: { display: false } }
+                        }
+                    }
+                });
+            }
+        });
+    </script>
+</body>
+
+</html>

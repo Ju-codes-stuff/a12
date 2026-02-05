@@ -1,0 +1,1058 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Builder Dashboard - Urban Sprawl Management System">
+    <title>Builder Dashboard | Urban Sprawl Management</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+    <div class="dashboard">
+        <!-- Sidebar Navigation -->
+        <aside class="sidebar">
+            <div class="sidebar-brand">
+                <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none"
+                    stroke="var(--primary-emerald)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
+                    <polyline points="9 22 9 12 15 12 15 22" />
+                </svg>
+                Urban Sprawl
+            </div>
+
+            <nav class="sidebar-nav">
+                <div class="sidebar-section">
+                    <div class="sidebar-section-title">Analytics</div>
+                    <a href="#" class="sidebar-link active" data-tab="infographics">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <line x1="18" y1="20" x2="18" y2="10" />
+                            <line x1="12" y1="20" x2="12" y2="4" />
+                            <line x1="6" y1="20" x2="6" y2="14" />
+                        </svg>
+                        Dynamic Infographics
+                    </a>
+                    <a href="#" class="sidebar-link" data-tab="forecasting">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="22 12 18 12 15 21 9 3 6 12 2 12" />
+                        </svg>
+                        Forecasting & Development
+                    </a>
+                    <a href="#" class="sidebar-link" data-tab="timeline">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="12" cy="12" r="10" />
+                            <polyline points="12 6 12 12 16 14" />
+                        </svg>
+                        Historical Timeline
+                    </a>
+                </div>
+
+                <div class="sidebar-section">
+                    <div class="sidebar-section-title">Tools</div>
+                    <a href="#" class="sidebar-link" data-tab="policy">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path
+                                d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z" />
+                        </svg>
+                        Policy Simulator
+                    </a>
+                    <a href="#" class="sidebar-link" data-tab="comparison">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="3" y="3" width="18" height="18" rx="2" ry="2" />
+                            <line x1="12" y1="3" x2="12" y2="21" />
+                        </svg>
+                        Comparison Dashboard
+                    </a>
+                    <a href="#" class="sidebar-link" data-tab="scenarios">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z" />
+                        </svg>
+                        Saved Scenarios
+                    </a>
+                </div>
+
+                <div class="sidebar-section">
+                    <div class="sidebar-section-title">Engagement</div>
+                    <a href="#" class="sidebar-link" data-tab="sdg">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z" />
+                            <path d="m9 12 2 2 4-4" />
+                        </svg>
+                        SDG Progress
+                    </a>
+                    <a href="#" class="sidebar-link" data-tab="alerts">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9" />
+                            <path d="M13.73 21a2 2 0 0 1-3.46 0" />
+                        </svg>
+                        Alert Center
+                        <span class="badge error" style="margin-left: auto;">3</span>
+                    </a>
+                    <a href="#" class="sidebar-link" data-tab="feedback">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
+                        </svg>
+                        Feedback
+                    </a>
+                </div>
+
+                <div class="sidebar-section">
+                    <div class="sidebar-section-title">Export</div>
+                    <a href="#" class="sidebar-link" data-tab="reports">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
+                            <polyline points="14 2 14 8 20 8" />
+                            <line x1="16" y1="13" x2="8" y2="13" />
+                            <line x1="16" y1="17" x2="8" y2="17" />
+                        </svg>
+                        Export Reports
+                    </a>
+                </div>
+            </nav>
+
+            <div class="sidebar-footer">
+                <div class="sidebar-user">
+                    <div class="sidebar-avatar">BP</div>
+                    <div class="sidebar-user-info">
+                        <div class="sidebar-user-name">Builder User</div>
+                        <div class="sidebar-user-role">Urban Planning Dept.</div>
+                    </div>
+                </div>
+                <a href="../index.html" class="btn btn-sm btn-secondary"
+                    style="width: 100%; margin-top: var(--spacing-md);">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4" />
+                        <polyline points="16 17 21 12 16 7" />
+                        <line x1="21" y1="12" x2="9" y2="12" />
+                    </svg>
+                    Logout
+                </a>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Dynamic Infographics Tab -->
+            <div id="infographics" class="tab-content active">
+                <div class="page-header">
+                    <div>
+                        <h1 class="page-title">Dynamic Infographics</h1>
+                        <p class="page-subtitle">ML model results and urban sprawl indicators</p>
+                    </div>
+                    <div class="flex gap-md">
+                        <button class="btn btn-secondary btn-sm">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+                                <polyline points="7 10 12 15 17 10" />
+                                <line x1="12" y1="15" x2="12" y2="3" />
+                            </svg>
+                            Export Data
+                        </button>
+                        <button class="btn btn-primary btn-sm">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <polyline points="23 4 23 10 17 10" />
+                                <path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10" />
+                            </svg>
+                            Refresh
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Stats Grid -->
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-header">
+                            <div class="stat-icon"
+                                style="background: linear-gradient(135deg, rgba(16, 185, 129, 0.1), rgba(16, 185, 129, 0.2)); color: var(--primary-emerald);">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round">
+                                    <path
+                                        d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z" />
+                                </svg>
+                            </div>
+                            <span class="stat-trend up">↑ 12.5%</span>
+                        </div>
+                        <div class="stat-value">67.3</div>
+                        <div class="stat-label">Urban Sprawl Index</div>
+                    </div>
+
+                    <div class="stat-card">
+                        <div class="stat-header">
+                            <div class="stat-icon"
+                                style="background: linear-gradient(135deg, rgba(14, 165, 233, 0.1), rgba(14, 165, 233, 0.2)); color: var(--secondary-sky);">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round">
+                                    <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
+                                    <circle cx="9" cy="7" r="4" />
+                                    <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
+                                    <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+                                </svg>
+                            </div>
+                            <span class="stat-trend up">↑ 3.2%</span>
+                        </div>
+                        <div class="stat-value">2.4M</div>
+                        <div class="stat-label">Population Density</div>
+                    </div>
+
+                    <div class="stat-card">
+                        <div class="stat-header">
+                            <div class="stat-icon"
+                                style="background: linear-gradient(135deg, rgba(249, 115, 22, 0.1), rgba(249, 115, 22, 0.2)); color: var(--accent-orange);">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round">
+                                    <path
+                                        d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z" />
+                                </svg>
+                            </div>
+                            <span class="stat-trend down">↓ 5.1%</span>
+                        </div>
+                        <div class="stat-value">72%</div>
+                        <div class="stat-label">Infrastructure Stress</div>
+                    </div>
+
+                    <div class="stat-card">
+                        <div class="stat-header">
+                            <div class="stat-icon"
+                                style="background: linear-gradient(135deg, rgba(34, 197, 94, 0.1), rgba(34, 197, 94, 0.2)); color: var(--success);">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round">
+                                    <path d="M12 2a10 10 0 1 0 10 10H12V2z" />
+                                    <path d="M12 12 2.1 9.3" />
+                                    <path d="M12 2c-5.5 0-10 4.5-10 10h10V2z" />
+                                </svg>
+                            </div>
+                            <span class="stat-trend up">↑ 8.7%</span>
+                        </div>
+                        <div class="stat-value">54</div>
+                        <div class="stat-label">Environmental Score</div>
+                    </div>
+                </div>
+
+                <!-- Charts Row -->
+                <div class="grid grid-2" style="margin-bottom: var(--spacing-xl);">
+                    <!-- Land Use Chart -->
+                    <div class="chart-card">
+                        <div class="chart-header">
+                            <h3 class="chart-title">Land Use Classification</h3>
+                            <div class="confidence-indicator">
+                                <span
+                                    style="font-size: var(--font-size-xs); color: var(--text-muted);">Confidence:</span>
+                                <div class="confidence-bar" style="width: 80px;">
+                                    <div class="confidence-fill" style="width: 87%;"></div>
+                                </div>
+                                <span class="confidence-value" style="color: var(--success);">87%</span>
+                            </div>
+                        </div>
+                        <div class="chart-container">
+                            <canvas id="landUseChart"></canvas>
+                        </div>
+                    </div>
+
+                    <!-- Sprawl Trend Chart -->
+                    <div class="chart-card">
+                        <div class="chart-header">
+                            <h3 class="chart-title">Urban Sprawl Trend (Monthly)</h3>
+                            <div class="confidence-indicator">
+                                <span
+                                    style="font-size: var(--font-size-xs); color: var(--text-muted);">Confidence:</span>
+                                <div class="confidence-bar" style="width: 80px;">
+                                    <div class="confidence-fill" style="width: 82%;"></div>
+                                </div>
+                                <span class="confidence-value" style="color: var(--success);">82%</span>
+                            </div>
+                        </div>
+                        <div class="chart-container">
+                            <canvas id="sprawlTrendChart"></canvas>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Zone Analysis -->
+                <div class="chart-card">
+                    <div class="chart-header">
+                        <h3 class="chart-title">Zone-wise Population Density Analysis</h3>
+                        <div class="chart-controls">
+                            <button class="btn btn-sm btn-secondary">North</button>
+                            <button class="btn btn-sm btn-secondary">South</button>
+                            <button class="btn btn-sm btn-secondary">East</button>
+                            <button class="btn btn-sm btn-secondary">West</button>
+                            <button class="btn btn-sm btn-primary">All Zones</button>
+                        </div>
+                    </div>
+                    <div class="chart-container">
+                        <canvas id="zoneDensityChart"></canvas>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Forecasting Tab -->
+            <div id="forecasting" class="tab-content">
+                <div class="page-header">
+                    <div>
+                        <h1 class="page-title">Forecasting & Development</h1>
+                        <p class="page-subtitle">Trend projections and scenario planning</p>
+                    </div>
+                </div>
+
+                <!-- Projection Controls -->
+                <div class="card" style="margin-bottom: var(--spacing-xl);">
+                    <h4 style="margin-bottom: var(--spacing-lg);">Scenario Planner</h4>
+                    <div class="grid grid-3" style="gap: var(--spacing-xl);">
+                        <div>
+                            <label class="form-label">Population Growth Rate</label>
+                            <input type="range" id="popGrowth" min="0" max="10" value="3" style="width: 100%;">
+                            <div class="flex justify-between"
+                                style="font-size: var(--font-size-xs); color: var(--text-muted);">
+                                <span>0%</span><span>5%</span><span>10%</span>
+                            </div>
+                        </div>
+                        <div>
+                            <label class="form-label">Industrial Expansion</label>
+                            <input type="range" id="indExpansion" min="0" max="10" value="5" style="width: 100%;">
+                            <div class="flex justify-between"
+                                style="font-size: var(--font-size-xs); color: var(--text-muted);">
+                                <span>0%</span><span>5%</span><span>10%</span>
+                            </div>
+                        </div>
+                        <div>
+                            <label class="form-label">Green Space Policy</label>
+                            <input type="range" id="greenSpace" min="0" max="10" value="7" style="width: 100%;">
+                            <div class="flex justify-between"
+                                style="font-size: var(--font-size-xs); color: var(--text-muted);">
+                                <span>Weak</span><span>Moderate</span><span>Strong</span>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="btn btn-primary" style="margin-top: var(--spacing-lg);">
+                        Run Projection
+                    </button>
+                </div>
+
+                <!-- Projection Charts -->
+                <div class="grid grid-2" style="margin-bottom: var(--spacing-xl);">
+                    <div class="chart-card">
+                        <div class="chart-header">
+                            <h3 class="chart-title">5/10/25 Year Projections</h3>
+                            <div class="confidence-indicator">
+                                <span
+                                    style="font-size: var(--font-size-xs); color: var(--text-muted);">Uncertainty:</span>
+                                <span class="badge warning">±15%</span>
+                            </div>
+                        </div>
+                        <div class="chart-container">
+                            <canvas id="projectionChart"></canvas>
+                        </div>
+                    </div>
+
+                    <div class="chart-card">
+                        <div class="chart-header">
+                            <h3 class="chart-title">Resource Allocation Insights</h3>
+                        </div>
+                        <div style="padding: var(--spacing-md);">
+                            <div style="margin-bottom: var(--spacing-lg);">
+                                <div class="flex justify-between mb-sm">
+                                    <span>Road Infrastructure</span>
+                                    <span class="badge error">High Priority</span>
+                                </div>
+                                <div class="progress-bar">
+                                    <div class="progress-fill orange" style="width: 85%;"></div>
+                                </div>
+                            </div>
+                            <div style="margin-bottom: var(--spacing-lg);">
+                                <div class="flex justify-between mb-sm">
+                                    <span>Water Supply</span>
+                                    <span class="badge warning">Medium Priority</span>
+                                </div>
+                                <div class="progress-bar">
+                                    <div class="progress-fill sky" style="width: 65%;"></div>
+                                </div>
+                            </div>
+                            <div style="margin-bottom: var(--spacing-lg);">
+                                <div class="flex justify-between mb-sm">
+                                    <span>Public Transit</span>
+                                    <span class="badge error">High Priority</span>
+                                </div>
+                                <div class="progress-bar">
+                                    <div class="progress-fill violet" style="width: 78%;"></div>
+                                </div>
+                            </div>
+                            <div style="margin-bottom: var(--spacing-lg);">
+                                <div class="flex justify-between mb-sm">
+                                    <span>Green Spaces</span>
+                                    <span class="badge success">On Track</span>
+                                </div>
+                                <div class="progress-bar">
+                                    <div class="progress-fill emerald" style="width: 45%;"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Risk Matrix -->
+                <div class="chart-card">
+                    <div class="chart-header">
+                        <h3 class="chart-title">Risk Assessment Matrix</h3>
+                    </div>
+                    <div class="grid grid-4" style="gap: var(--spacing-md); padding: var(--spacing-md);">
+                        <div class="card" style="background: rgba(239, 68, 68, 0.1); border-color: var(--error);">
+                            <h5 style="color: var(--error);">Critical</h5>
+                            <p style="font-size: var(--font-size-sm); color: var(--text-secondary);">Traffic Congestion
+                            </p>
+                            <p style="font-size: var(--font-size-xs); color: var(--text-muted);">Likelihood: 85%</p>
+                        </div>
+                        <div class="card" style="background: rgba(234, 179, 8, 0.1); border-color: var(--warning);">
+                            <h5 style="color: var(--warning);">High</h5>
+                            <p style="font-size: var(--font-size-sm); color: var(--text-secondary);">Water Scarcity</p>
+                            <p style="font-size: var(--font-size-xs); color: var(--text-muted);">Likelihood: 65%</p>
+                        </div>
+                        <div class="card"
+                            style="background: rgba(249, 115, 22, 0.1); border-color: var(--accent-orange);">
+                            <h5 style="color: var(--accent-orange);">Medium</h5>
+                            <p style="font-size: var(--font-size-sm); color: var(--text-secondary);">Housing Shortage
+                            </p>
+                            <p style="font-size: var(--font-size-xs); color: var(--text-muted);">Likelihood: 55%</p>
+                        </div>
+                        <div class="card" style="background: rgba(34, 197, 94, 0.1); border-color: var(--success);">
+                            <h5 style="color: var(--success);">Low</h5>
+                            <p style="font-size: var(--font-size-sm); color: var(--text-secondary);">Power Grid Failure
+                            </p>
+                            <p style="font-size: var(--font-size-xs); color: var(--text-muted);">Likelihood: 20%</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Historical Timeline Tab -->
+            <div id="timeline" class="tab-content">
+                <div class="page-header">
+                    <div>
+                        <h1 class="page-title">Historical Timeline</h1>
+                        <p class="page-subtitle">Compare urban sprawl patterns over different time periods</p>
+                    </div>
+                </div>
+
+                <div class="grid grid-2" style="margin-bottom: var(--spacing-xl);">
+                    <div class="chart-card">
+                        <div class="chart-header">
+                            <h3 class="chart-title">Sprawl Evolution (2010-2025)</h3>
+                        </div>
+                        <div class="chart-container">
+                            <canvas id="evolutionChart"></canvas>
+                        </div>
+                    </div>
+
+                    <div class="chart-card">
+                        <h3 class="chart-title" style="margin-bottom: var(--spacing-lg);">Key Milestones</h3>
+                        <div class="timeline">
+                            <div class="timeline-item">
+                                <div class="timeline-date">2024</div>
+                                <div class="timeline-content">
+                                    <strong>Smart City Initiative Launch</strong>
+                                    <p style="font-size: var(--font-size-sm); color: var(--text-secondary);">Integration
+                                        of IoT sensors and ML analytics</p>
+                                </div>
+                            </div>
+                            <div class="timeline-item">
+                                <div class="timeline-date">2022</div>
+                                <div class="timeline-content">
+                                    <strong>Green Belt Policy</strong>
+                                    <p style="font-size: var(--font-size-sm); color: var(--text-secondary);">15%
+                                        increase in protected green zones</p>
+                                </div>
+                            </div>
+                            <div class="timeline-item">
+                                <div class="timeline-date">2020</div>
+                                <div class="timeline-content">
+                                    <strong>Metro Expansion Phase II</strong>
+                                    <p style="font-size: var(--font-size-sm); color: var(--text-secondary);">Reduced
+                                        congestion by 23%</p>
+                                </div>
+                            </div>
+                            <div class="timeline-item">
+                                <div class="timeline-date">2018</div>
+                                <div class="timeline-content">
+                                    <strong>Urban Density Rezoning</strong>
+                                    <p style="font-size: var(--font-size-sm); color: var(--text-secondary);">New
+                                        building height regulations</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Policy Simulator Tab -->
+            <div id="policy" class="tab-content">
+                <div class="page-header">
+                    <div>
+                        <h1 class="page-title">Policy Impact Simulator</h1>
+                        <p class="page-subtitle">Model potential effects of planning decisions</p>
+                    </div>
+                </div>
+
+                <div class="card" style="margin-bottom: var(--spacing-xl);">
+                    <h4 style="margin-bottom: var(--spacing-lg);">Select Policy to Simulate</h4>
+                    <div class="grid grid-2" style="gap: var(--spacing-lg);">
+                        <div>
+                            <label class="form-label">Policy Type</label>
+                            <select class="form-input">
+                                <option>Zoning Regulation Change</option>
+                                <option>Green Space Mandate</option>
+                                <option>Transportation Investment</option>
+                                <option>Industrial Zone Expansion</option>
+                                <option>Housing Density Increase</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="form-label">Implementation Timeline</label>
+                            <select class="form-input">
+                                <option>Immediate (1 year)</option>
+                                <option>Short-term (5 years)</option>
+                                <option>Medium-term (10 years)</option>
+                                <option>Long-term (25 years)</option>
+                            </select>
+                        </div>
+                    </div>
+                    <button class="btn btn-primary" style="margin-top: var(--spacing-lg);">
+                        Simulate Impact
+                    </button>
+                </div>
+
+                <div class="grid grid-3">
+                    <div class="stat-card">
+                        <h5 style="color: var(--text-secondary); margin-bottom: var(--spacing-sm);">Projected Population
+                            Impact</h5>
+                        <div class="stat-value" style="color: var(--success);">+12.5%</div>
+                        <div class="confidence-indicator" style="margin-top: var(--spacing-sm);">
+                            <span style="font-size: var(--font-size-xs);">Confidence:</span>
+                            <div class="confidence-bar" style="flex: 1;">
+                                <div class="confidence-fill" style="width: 78%;"></div>
+                            </div>
+                            <span class="confidence-value">78%</span>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <h5 style="color: var(--text-secondary); margin-bottom: var(--spacing-sm);">Environmental Score
+                            Change</h5>
+                        <div class="stat-value" style="color: var(--primary-emerald);">+8 pts</div>
+                        <div class="confidence-indicator" style="margin-top: var(--spacing-sm);">
+                            <span style="font-size: var(--font-size-xs);">Confidence:</span>
+                            <div class="confidence-bar" style="flex: 1;">
+                                <div class="confidence-fill" style="width: 82%;"></div>
+                            </div>
+                            <span class="confidence-value">82%</span>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <h5 style="color: var(--text-secondary); margin-bottom: var(--spacing-sm);">Infrastructure Load
+                        </h5>
+                        <div class="stat-value" style="color: var(--warning);">+18%</div>
+                        <div class="confidence-indicator" style="margin-top: var(--spacing-sm);">
+                            <span style="font-size: var(--font-size-xs);">Confidence:</span>
+                            <div class="confidence-bar" style="flex: 1;">
+                                <div class="confidence-fill" style="width: 65%;"></div>
+                            </div>
+                            <span class="confidence-value">65%</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Comparison Dashboard Tab -->
+            <div id="comparison" class="tab-content">
+                <div class="page-header">
+                    <div>
+                        <h1 class="page-title">Comparison Dashboard</h1>
+                        <p class="page-subtitle">Compare different scenarios and policy outcomes</p>
+                    </div>
+                </div>
+
+                <div class="grid grid-2" style="gap: var(--spacing-xl);">
+                    <div class="card">
+                        <h4 style="margin-bottom: var(--spacing-lg); color: var(--secondary-sky);">Scenario A: Current
+                            Trajectory</h4>
+                        <div style="margin-bottom: var(--spacing-md);">
+                            <div class="flex justify-between mb-sm">
+                                <span>Urban Sprawl Index</span>
+                                <strong>78.5</strong>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress-fill sky" style="width: 78%;"></div>
+                            </div>
+                        </div>
+                        <div style="margin-bottom: var(--spacing-md);">
+                            <div class="flex justify-between mb-sm">
+                                <span>Green Cover</span>
+                                <strong>22%</strong>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress-fill emerald" style="width: 22%;"></div>
+                            </div>
+                        </div>
+                        <div style="margin-bottom: var(--spacing-md);">
+                            <div class="flex justify-between mb-sm">
+                                <span>Infrastructure Stress</span>
+                                <strong>85%</strong>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress-fill orange" style="width: 85%;"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <h4 style="margin-bottom: var(--spacing-lg); color: var(--primary-emerald);">Scenario B: With
+                            Green Policy</h4>
+                        <div style="margin-bottom: var(--spacing-md);">
+                            <div class="flex justify-between mb-sm">
+                                <span>Urban Sprawl Index</span>
+                                <strong>62.3</strong>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress-fill sky" style="width: 62%;"></div>
+                            </div>
+                        </div>
+                        <div style="margin-bottom: var(--spacing-md);">
+                            <div class="flex justify-between mb-sm">
+                                <span>Green Cover</span>
+                                <strong>35%</strong>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress-fill emerald" style="width: 35%;"></div>
+                            </div>
+                        </div>
+                        <div style="margin-bottom: var(--spacing-md);">
+                            <div class="flex justify-between mb-sm">
+                                <span>Infrastructure Stress</span>
+                                <strong>68%</strong>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress-fill orange" style="width: 68%;"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Saved Scenarios Tab -->
+            <div id="scenarios" class="tab-content">
+                <div class="page-header">
+                    <div>
+                        <h1 class="page-title">Saved Scenarios</h1>
+                        <p class="page-subtitle">Bookmark and revisit your analysis configurations</p>
+                    </div>
+                    <button class="btn btn-primary btn-sm">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <line x1="12" y1="5" x2="12" y2="19" />
+                            <line x1="5" y1="12" x2="19" y2="12" />
+                        </svg>
+                        Save Current View
+                    </button>
+                </div>
+
+                <div class="grid grid-3">
+                    <div class="card">
+                        <div class="flex items-center gap-md mb-md">
+                            <div class="stat-icon"
+                                style="background: rgba(16, 185, 129, 0.1); color: var(--primary-emerald);">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round">
+                                    <path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z" />
+                                </svg>
+                            </div>
+                            <div>
+                                <h5>Green Initiative 2025</h5>
+                                <p style="font-size: var(--font-size-xs); color: var(--text-muted);">Saved Jan 15, 2026
+                                </p>
+                            </div>
+                        </div>
+                        <p
+                            style="font-size: var(--font-size-sm); color: var(--text-secondary); margin-bottom: var(--spacing-md);">
+                            High green space policy with moderate industrial growth</p>
+                        <button class="btn btn-secondary btn-sm" style="width: 100%;">Load Scenario</button>
+                    </div>
+
+                    <div class="card">
+                        <div class="flex items-center gap-md mb-md">
+                            <div class="stat-icon"
+                                style="background: rgba(14, 165, 233, 0.1); color: var(--secondary-sky);">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round">
+                                    <path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z" />
+                                </svg>
+                            </div>
+                            <div>
+                                <h5>Metro Expansion</h5>
+                                <p style="font-size: var(--font-size-xs); color: var(--text-muted);">Saved Jan 10, 2026
+                                </p>
+                            </div>
+                        </div>
+                        <p
+                            style="font-size: var(--font-size-sm); color: var(--text-secondary); margin-bottom: var(--spacing-md);">
+                            Transit-oriented development scenario</p>
+                        <button class="btn btn-secondary btn-sm" style="width: 100%;">Load Scenario</button>
+                    </div>
+
+                    <div class="card">
+                        <div class="flex items-center gap-md mb-md">
+                            <div class="stat-icon"
+                                style="background: rgba(249, 115, 22, 0.1); color: var(--accent-orange);">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round">
+                                    <path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z" />
+                                </svg>
+                            </div>
+                            <div>
+                                <h5>Industrial Hub</h5>
+                                <p style="font-size: var(--font-size-xs); color: var(--text-muted);">Saved Jan 5, 2026
+                                </p>
+                            </div>
+                        </div>
+                        <p
+                            style="font-size: var(--font-size-sm); color: var(--text-secondary); margin-bottom: var(--spacing-md);">
+                            Rapid industrial growth projection</p>
+                        <button class="btn btn-secondary btn-sm" style="width: 100%;">Load Scenario</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SDG Progress Tab -->
+            <div id="sdg" class="tab-content">
+                <div class="page-header">
+                    <div>
+                        <h1 class="page-title">SDG Progress Tracker</h1>
+                        <p class="page-subtitle">Alignment with Sustainable Development Goals</p>
+                    </div>
+                </div>
+
+                <div class="grid grid-2" style="gap: var(--spacing-xl);">
+                    <div class="card">
+                        <h4 style="margin-bottom: var(--spacing-xl);">Goal Alignment Status</h4>
+
+                        <div style="margin-bottom: var(--spacing-xl);">
+                            <div class="flex justify-between items-center mb-sm">
+                                <div class="flex items-center gap-md">
+                                    <span class="badge" style="background: #fd9d24; color: white;">SDG 11</span>
+                                    <span>Sustainable Cities</span>
+                                </div>
+                                <strong>72%</strong>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 72%; background: #fd9d24;"></div>
+                            </div>
+                        </div>
+
+                        <div style="margin-bottom: var(--spacing-xl);">
+                            <div class="flex justify-between items-center mb-sm">
+                                <div class="flex items-center gap-md">
+                                    <span class="badge" style="background: #f36d25; color: white;">SDG 9</span>
+                                    <span>Industry & Innovation</span>
+                                </div>
+                                <strong>65%</strong>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 65%; background: #f36d25;"></div>
+                            </div>
+                        </div>
+
+                        <div style="margin-bottom: var(--spacing-xl);">
+                            <div class="flex justify-between items-center mb-sm">
+                                <div class="flex items-center gap-md">
+                                    <span class="badge" style="background: #26bde2; color: white;">SDG 6</span>
+                                    <span>Clean Water</span>
+                                </div>
+                                <strong>58%</strong>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 58%; background: #26bde2;"></div>
+                            </div>
+                        </div>
+
+                        <div style="margin-bottom: var(--spacing-xl);">
+                            <div class="flex justify-between items-center mb-sm">
+                                <div class="flex items-center gap-md">
+                                    <span class="badge" style="background: #3f7e44; color: white;">SDG 13</span>
+                                    <span>Climate Action</span>
+                                </div>
+                                <strong>45%</strong>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 45%; background: #3f7e44;"></div>
+                            </div>
+                        </div>
+
+                        <div>
+                            <div class="flex justify-between items-center mb-sm">
+                                <div class="flex items-center gap-md">
+                                    <span class="badge" style="background: #4c9f38; color: white;">SDG 3</span>
+                                    <span>Health & Well-being</span>
+                                </div>
+                                <strong>68%</strong>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 68%; background: #4c9f38;"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="chart-card">
+                        <div class="chart-header">
+                            <h3 class="chart-title">SDG Progress Over Time</h3>
+                        </div>
+                        <div class="chart-container">
+                            <canvas id="sdgChart"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Alert Center Tab -->
+            <div id="alerts" class="tab-content">
+                <div class="page-header">
+                    <div>
+                        <h1 class="page-title">Alert Center</h1>
+                        <p class="page-subtitle">Critical urban indicators and notifications</p>
+                    </div>
+                    <button class="btn btn-secondary btn-sm">Mark All Read</button>
+                </div>
+
+                <div class="alert-banner error" style="margin-bottom: var(--spacing-md);">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="10" />
+                        <line x1="12" y1="8" x2="12" y2="12" />
+                        <line x1="12" y1="16" x2="12.01" y2="16" />
+                    </svg>
+                    <div style="flex: 1;">
+                        <strong>Critical: Traffic Congestion Index Exceeded Threshold</strong>
+                        <p style="font-size: var(--font-size-sm);">Zone 4 experiencing 3x normal congestion levels</p>
+                    </div>
+                    <span style="font-size: var(--font-size-xs);">2 hours ago</span>
+                </div>
+
+                <div class="alert-banner warning" style="margin-bottom: var(--spacing-md);">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path
+                            d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z" />
+                        <line x1="12" y1="9" x2="12" y2="13" />
+                        <line x1="12" y1="17" x2="12.01" y2="17" />
+                    </svg>
+                    <div style="flex: 1;">
+                        <strong>Warning: Water Table Levels Dropping</strong>
+                        <p style="font-size: var(--font-size-sm);">15% below seasonal average in North District</p>
+                    </div>
+                    <span style="font-size: var(--font-size-xs);">5 hours ago</span>
+                </div>
+
+                <div class="alert-banner warning" style="margin-bottom: var(--spacing-md);">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path
+                            d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z" />
+                        <line x1="12" y1="9" x2="12" y2="13" />
+                        <line x1="12" y1="17" x2="12.01" y2="17" />
+                    </svg>
+                    <div style="flex: 1;">
+                        <strong>Warning: Air Quality Index Elevated</strong>
+                        <p style="font-size: var(--font-size-sm);">Industrial zone AQI at 165 (Unhealthy for sensitive
+                            groups)</p>
+                    </div>
+                    <span style="font-size: var(--font-size-xs);">8 hours ago</span>
+                </div>
+
+                <div class="alert-banner info" style="margin-bottom: var(--spacing-md);">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="10" />
+                        <line x1="12" y1="16" x2="12" y2="12" />
+                        <line x1="12" y1="8" x2="12.01" y2="8" />
+                    </svg>
+                    <div style="flex: 1;">
+                        <strong>Info: New ML Model Update Available</strong>
+                        <p style="font-size: var(--font-size-sm);">Version 2.4 includes improved prediction accuracy</p>
+                    </div>
+                    <span style="font-size: var(--font-size-xs);">1 day ago</span>
+                </div>
+
+                <div class="alert-banner success">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
+                        <polyline points="22 4 12 14.01 9 11.01" />
+                    </svg>
+                    <div style="flex: 1;">
+                        <strong>Success: Green Cover Target Met</strong>
+                        <p style="font-size: var(--font-size-sm);">East Zone achieved 25% green cover milestone</p>
+                    </div>
+                    <span style="font-size: var(--font-size-xs);">2 days ago</span>
+                </div>
+            </div>
+
+            <!-- Feedback Tab -->
+            <div id="feedback" class="tab-content">
+                <div class="page-header">
+                    <div>
+                        <h1 class="page-title">Feedback</h1>
+                        <p class="page-subtitle">Submit feedback and view community insights</p>
+                    </div>
+                </div>
+
+                <div class="grid grid-2" style="gap: var(--spacing-xl);">
+                    <div class="card">
+                        <h4 style="margin-bottom: var(--spacing-lg);">Submit Feedback</h4>
+                        <form>
+                            <div class="form-group">
+                                <label class="form-label">Category</label>
+                                <select class="form-input">
+                                    <option>Data Quality</option>
+                                    <option>Feature Request</option>
+                                    <option>Bug Report</option>
+                                    <option>Usability</option>
+                                    <option>General Suggestion</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">Subject</label>
+                                <input type="text" class="form-input" placeholder="Brief description">
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">Details</label>
+                                <textarea class="form-input" placeholder="Provide detailed feedback..."></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary">Submit Feedback</button>
+                        </form>
+                    </div>
+
+                    <div class="card">
+                        <h4 style="margin-bottom: var(--spacing-lg);">Recent Community Insights</h4>
+                        <div
+                            style="border-bottom: 1px solid var(--neutral-200); padding-bottom: var(--spacing-md); margin-bottom: var(--spacing-md);">
+                            <div class="flex items-center gap-sm mb-sm">
+                                <span class="badge info">Feature</span>
+                                <span style="font-size: var(--font-size-sm); color: var(--text-muted);">2 days
+                                    ago</span>
+                            </div>
+                            <p style="font-size: var(--font-size-sm);">"Request for real-time traffic integration with
+                                the forecasting module"</p>
+                        </div>
+                        <div
+                            style="border-bottom: 1px solid var(--neutral-200); padding-bottom: var(--spacing-md); margin-bottom: var(--spacing-md);">
+                            <div class="flex items-center gap-sm mb-sm">
+                                <span class="badge success">Usability</span>
+                                <span style="font-size: var(--font-size-sm); color: var(--text-muted);">3 days
+                                    ago</span>
+                            </div>
+                            <p style="font-size: var(--font-size-sm);">"The comparison dashboard is very helpful for
+                                policy presentations"</p>
+                        </div>
+                        <div>
+                            <div class="flex items-center gap-sm mb-sm">
+                                <span class="badge warning">Data</span>
+                                <span style="font-size: var(--font-size-sm); color: var(--text-muted);">5 days
+                                    ago</span>
+                            </div>
+                            <p style="font-size: var(--font-size-sm);">"Historical data for Zone 3 seems outdated -
+                                needs refresh"</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Reports Tab -->
+            <div id="reports" class="tab-content">
+                <div class="page-header">
+                    <div>
+                        <h1 class="page-title">Export Reports</h1>
+                        <p class="page-subtitle">Generate PDF summaries and data exports</p>
+                    </div>
+                </div>
+
+                <div class="grid grid-3">
+                    <div class="card text-center">
+                        <div class="card-icon emerald" style="margin: 0 auto var(--spacing-lg);">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
+                                <polyline points="14 2 14 8 20 8" />
+                                <line x1="16" y1="13" x2="8" y2="13" />
+                                <line x1="16" y1="17" x2="8" y2="17" />
+                            </svg>
+                        </div>
+                        <h5>Executive Summary</h5>
+                        <p
+                            style="font-size: var(--font-size-sm); color: var(--text-secondary); margin-bottom: var(--spacing-lg);">
+                            High-level overview with key metrics and insights</p>
+                        <button class="btn btn-primary btn-sm" style="width: 100%;">Generate PDF</button>
+                    </div>
+
+                    <div class="card text-center">
+                        <div class="card-icon sky" style="margin: 0 auto var(--spacing-lg);">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <line x1="18" y1="20" x2="18" y2="10" />
+                                <line x1="12" y1="20" x2="12" y2="4" />
+                                <line x1="6" y1="20" x2="6" y2="14" />
+                            </svg>
+                        </div>
+                        <h5>Detailed Analytics</h5>
+                        <p
+                            style="font-size: var(--font-size-sm); color: var(--text-secondary); margin-bottom: var(--spacing-lg);">
+                            Comprehensive data analysis with all charts and metrics</p>
+                        <button class="btn btn-primary btn-sm" style="width: 100%;">Generate PDF</button>
+                    </div>
+
+                    <div class="card text-center">
+                        <div class="card-icon orange" style="margin: 0 auto var(--spacing-lg);">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+                                <polyline points="7 10 12 15 17 10" />
+                                <line x1="12" y1="15" x2="12" y2="3" />
+                            </svg>
+                        </div>
+                        <h5>Raw Data Export</h5>
+                        <p
+                            style="font-size: var(--font-size-sm); color: var(--text-secondary); margin-bottom: var(--spacing-lg);">
+                            Download CSV/Excel files for custom analysis</p>
+                        <button class="btn btn-primary btn-sm" style="width: 100%;">Download CSV</button>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="../js/charts.js"></script>
+    <script src="../js/main.js"></script>
+</body>
+
+</html>

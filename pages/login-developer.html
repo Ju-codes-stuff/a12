@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Developer Login - Urban Sprawl Management System">
+    <title>Developer Login | Urban Sprawl Management</title>
+    <link rel="stylesheet" href="../css/styles.css">
+</head>
+
+<body>
+    <div class="login-page">
+        <div class="login-container">
+            <a href="../index.html"
+                style="display: block; text-align: center; margin-bottom: var(--spacing-lg); color: var(--text-secondary); font-size: var(--font-size-sm);">
+                ← Back to Home
+            </a>
+
+            <div class="login-card">
+                <div class="login-icon developer">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="16 18 22 12 16 6" />
+                        <polyline points="8 6 2 12 8 18" />
+                    </svg>
+                </div>
+
+                <h2>Developer Portal</h2>
+                <p class="subtitle">Access system analytics and full platform controls</p>
+
+                <form class="login-form" id="loginForm">
+                    <div class="form-group">
+                        <label class="form-label" for="email">Email Address</label>
+                        <input type="email" id="email" class="form-input" placeholder="developer@urbansprawl.dev"
+                            required>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label" for="password">Password</label>
+                        <input type="password" id="password" class="form-input" placeholder="Enter your password"
+                            required>
+                    </div>
+
+                    <div class="form-group" style="display: flex; align-items: center; justify-content: space-between;">
+                        <label
+                            style="display: flex; align-items: center; gap: 8px; font-size: var(--font-size-sm); cursor: pointer;">
+                            <input type="checkbox" id="remember">
+                            Remember me
+                        </label>
+                        <a href="#" style="font-size: var(--font-size-sm); color: var(--accent-violet);">Forgot
+                            password?</a>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary"
+                        style="width: 100%; background: linear-gradient(135deg, var(--accent-violet), #a78bfa);">
+                        Sign In to Developer Portal
+                    </button>
+                </form>
+
+                <div class="login-footer">
+                    <p>Need different access? <a href="login-builder.html">Builder</a> or <a
+                            href="login-user.html">User</a> portals</p>
+                </div>
+            </div>
+
+            <p
+                style="text-align: center; margin-top: var(--spacing-lg); font-size: var(--font-size-xs); color: var(--text-muted);">
+                For demo purposes, use any email and password to access the dashboard.
+            </p>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('loginForm').addEventListener('submit', function (e) {
+            e.preventDefault();
+            // Simulate login - redirect to dashboard
+            window.location.href = 'dashboard-developer.html';
+        });
+    </script>
+</body>
+
+</html>
